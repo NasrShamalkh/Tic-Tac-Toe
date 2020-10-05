@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './src/index.html',
-  filename: './index.html'
+  filename: './index.html',
+  publicPath: '/'
 });
 module.exports = {
   entry: './src',
@@ -19,6 +20,9 @@ module.exports = {
         use: ['babel-loader']
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   },
   resolve: {
     extensions: ['*', '.js', '.jsx']
