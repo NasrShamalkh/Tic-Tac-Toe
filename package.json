@@ -4,7 +4,7 @@
   "description": "A Tic-Tac-Toe game created using react.js ( functional components and react hooks ).",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot --port 3000",
+    "dev": "webpack-dev-server --mode development --open --hot --port 3000",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,8 @@
   "homepage": "https://github.com/NasrShamalkh/Tic-Tac-Toe#readme",
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sweetalert2": "^10.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
