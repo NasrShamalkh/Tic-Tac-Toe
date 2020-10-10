@@ -26,13 +26,13 @@ ul {
   float: left;
   font-size: 96px;
   /* font-weight: bold; */
-  line-height: 136px;
-  height: 136px;
+  line-height: 120px;
+  height: 120px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 136px;
+  width: 120px;
 }
 
 .square:focus {
@@ -120,4 +120,59 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+@media only screen and (max-width: 600px) {
+  ol,
+  ul {
+    padding-left: 20px;
+  }
+
+  .square {
+    font-size: 76px;
+    line-height: 120px;
+    height: 120px;
+    width: 120px;
+  }
+
+  .game-info {
+    font-size: 20px;
+  }
+  .game {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .control-button {
+    margin-top: 15px;
+  }
+  h1 {
+    font-size: 55px;
+  }
+  h2 {
+    font-size: 25;
+  }
+  #buttons-div {
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  ol,
+  ul {
+    padding-left: 17px;
+  }
+  .game {
+    justify-content: center;
+    align-items: center;
+  }
+  .square {
+    font-size: 66px;
+    line-height: 100px;
+    height: 100px;
+    width: 100px;
+  }
+
+  .control-button {
+    margin-top: 10px;
+  }
 }

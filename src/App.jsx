@@ -63,17 +63,18 @@ const Game = function() {
     if (winner) {
       if (winner === 'X') {
         alert(`Winner: ${player1}`);
-      } else if (winner === 'O') {
+      }
+      if (winner === 'O') {
         alert(`Winner: ${player2}`);
       }
       return `Winner: ${winner}`;
     } else if (isBoradFull(squares)) {
+      alert(`DRAW !!`);
       return `DRAW !!`;
     } else {
       return `Next Player: ${next}`;
     }
   };
-
   const renderSquare = function(i) {
     return (
       //return our square component
@@ -96,7 +97,16 @@ const Game = function() {
       />
     );
   };
-
+  //--------------------
+  const increaseScore = function() {
+    if (winner === 'X') {
+      setPlayer1Score(player1Score + 1);
+    }
+    if (winner === 'O') {
+      setPlayer2Score(player2Score + 1);
+    }
+  };
+  //--------------------
   const renderNamesButton = function() {
     return (
       <Names
@@ -117,10 +127,12 @@ const Game = function() {
         onClick={() => {
           //reassigin all square values to null
           setSquares(Array(9).fill(null));
-          //return the next to X
-          setXNext(true);
           setPlayer1Score(0);
           setPlayer2Score(0);
+          //return the next to X
+          setXNext(true);
+          // setPlayer1Score(0);
+          // setPlayer2Score(0);
         }}
       />
     );
@@ -132,11 +144,7 @@ const Game = function() {
       //render our restart component
       <Restart
         onClick={() => {
-          if (winner === 'X') {
-            setPlayer1Score(player1Score + 1);
-          } else if (winner === 'O') {
-            setPlayer2Score(player2Score + 1);
-          }
+          increaseScore();
           //reassigin all square values to null
           setSquares(Array(9).fill(null));
           //return the next to X
@@ -151,7 +159,8 @@ const Game = function() {
       <div id='main-div'>
         <h1>Tic Tac Toe</h1>
         <h2>
-          {player1} | {player2}
+          <span className='nameSpan'>{player1}</span> |{' '}
+          <span className='nameSpan'>{player2}</span>
         </h2>
         <h2>
           {player1Score} : {player2Score}
